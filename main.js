@@ -197,3 +197,23 @@ getData("GET", "https://jsonplaceholder.typicode.com/todos")
   .catch(function (err) {
     console.log(err);
   });
+
+//Generators (functions that can be paused and resumed as many times we like - at each pause it can give back(yield) a value (similar to return, but it's just paused))
+
+function* g1() {
+  console.log("Hello");
+  yield "Yield 1 Ran..";
+  console.log("World");
+  yield "Yield 2 Ran..";
+  return "Returned...";
+}
+
+var g = g1();
+
+console.log(g.next().value);
+console.log(g.next().value);
+console.log(g.next()); //haven't used .value so I can see that it is yielding an object and that done property is set to true (because in order for it not to be false we have to return something)
+
+for (let val of g) {
+  console.log(val); //doesn't give a return value
+}
