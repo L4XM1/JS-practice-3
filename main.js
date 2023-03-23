@@ -43,6 +43,49 @@ console.log(colors);
 
 // colors = "Green"; //TypeError: Assignment to constant variable.
 
+//Classes and Inheritance
+
+class User {
+  constructor(username, email, password) {
+    //method that will run when the obj is created
+    this.username = username;
+    this.email = email;
+    this.password = password;
+  }
+
+  static countUsers() {
+    //the same no matter what, so it can be a static method, we don't have to instantiate it
+    console.log("There are 50 users");
+  }
+
+  register() {
+    console.log(this.username + " is now registered");
+  }
+}
+
+let bob = new User("bob", "bob@email.com", "123456"); //instance of bob obj
+
+bob.register(); //using the object by calling a method
+
+User.countUsers();
+
+//Inheritance
+
+class Member extends User {
+  constructor(username, email, password, memberPackage) {
+    super(username, email, password); //same as writing this.
+    this.package = memberPackage;
+  }
+  getPackage() {
+    console.log(
+      this.username + " is subscribed to the " + this.package + " package"
+    );
+  }
+}
+
+let mike = new Member("mike", "mike@gmail.com", "123", "Standard");
+mike.getPackage();
+
 console.log("----------------------------------------------------------------");
 //Default Params
 function greet($greeting = "Hello World") {
