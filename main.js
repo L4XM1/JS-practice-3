@@ -1,5 +1,49 @@
 "use strict";
 
+//Let and Const Declaration
+var a = "Test1";
+var b = "Test2";
+
+function testVar() {
+  var a = 30;
+  if (true) {
+    var a = 50;
+    console.log(a); //50
+  }
+  console.log(a); //50
+}
+
+testVar();
+
+function testLet() {
+  let a = 30;
+  if (true) {
+    let a = 50;
+    console.log(a); //50
+  }
+  console.log(a); //30
+}
+
+testLet();
+
+for (var i = 0; i < 10; i++) {
+  //if we use let, it will log 0 through 9 and if we try to log it outside of this scope, it gives an error
+  console.log(i); // 9
+}
+
+console.log(i);
+// Since i is declared with the var keyword, it has function scope, which means that it is accessible both inside and outside of the loop. Therefore, the final console.log statement will log the value of i after the loop has completed, which will be 10.
+
+const colors = [];
+
+colors.push("red");
+colors.push("blue");
+
+console.log(colors);
+
+// colors = "Green"; //TypeError: Assignment to constant variable.
+
+console.log("----------------------------------------------------------------");
 //Default Params
 function greet($greeting = "Hello World") {
   console.log($greeting);
