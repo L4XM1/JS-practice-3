@@ -120,7 +120,6 @@ console.log(Number.isFinite(Infinity));
 console.log(Number.isNaN("hey"));
 console.log(Number.isInteger(-2));
 
-console.log("----------------------------------------------------------------");
 //Default Params
 function greet($greeting = "Hello World") {
   console.log($greeting);
