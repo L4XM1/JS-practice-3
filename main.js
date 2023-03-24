@@ -86,6 +86,19 @@ class Member extends User {
 let mike = new Member("mike", "mike@gmail.com", "123", "Standard");
 mike.getPackage();
 
+//Template Literals
+
+let name = "John";
+
+function makeUppercase(word) {
+  return word.toUpperCase();
+}
+
+let templateString = `<h1>${makeUppercase("Hello")}, ${name}</h1>
+<p>This is a simple template in JS</p>`;
+
+document.getElementById("templateString").innerHTML = templateString;
+
 console.log("----------------------------------------------------------------");
 //Default Params
 function greet($greeting = "Hello World") {
