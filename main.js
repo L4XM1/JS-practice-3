@@ -99,6 +99,27 @@ let templateString = `<h1>${makeUppercase("Hello")}, ${name}</h1>
 
 document.getElementById("templateString").innerHTML = templateString;
 
+//New String & Number Methods
+
+let theString = "Hello, my name is Marta and I love JS";
+
+console.log(theString.startsWith("Hello"));
+console.log(theString.endsWith("JS"));
+console.log(theString.includes("loves"));
+
+//Number Methods
+
+//Hex
+console.log(0xff);
+//Binary
+console.log(0b101011);
+//Octal
+console.log(0o543);
+
+console.log(Number.isFinite(Infinity));
+console.log(Number.isNaN("hey"));
+console.log(Number.isInteger(-2));
+
 console.log("----------------------------------------------------------------");
 //Default Params
 function greet($greeting = "Hello World") {
